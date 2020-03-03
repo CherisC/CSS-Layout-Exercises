@@ -1,40 +1,65 @@
-container {
-    display: flex;
-    align-items: flex-start;
-    
-}
+
 /*Throwing my hands up on this one. I feel like my struggle is understanding the axis and 
 how it relates to the parent child relationship.*/
 
-.container1 {
-    
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: stretch;
-    align-items: flex-start;
-    flex-grow: 1;
-    height: 600px;
-    width: 600px;
-    position: fixed;
+/*
+Feedback: This is one of those things that is easy to over-complicate. When you
+come across a problem like this, its easy to get hung up on the image of an 
+entire chessboard for example. 
+
+If you start with the entire chessboard in mind, its easy to start getting lost in the
+details quickly, instead, lets focus on one thing at a time.
+
+First we need a... */
+
+/* Chessboard - we need a container to set everything in */
+.board {
+    /* Lets give ourselves a little border just to visually see our container as we change things */
+    border: 2px solid black;
+    /* Lets set the size of the box (because everything starts as a box) to the content, so that the
+    board will fill up naturally */
+    box-sizing: content-box;
+    /* We need to use flexbox, so here we go! */
+    display: flex;
+    /*
+        Let's pause here. Let's think about a chessboard. In order for something to look like a 
+        chessboard, it needs to have rows of squares. Each row should have alternating colored squares. 
+        In order to just get started here, what we need to do, is be able to create two rows, and 
+        they should each have alternating squares. Once we have that, we should be able to simply repeat
+        the rows until we have a chessboard, right? So let's get set up
+    */
+
+    flex-direction: column; /* This will allow is to create rows that stack on top of each other - Step 1! */
+    /* Let's just set a width and height on the board and center it so we can clearly see it on the page 
+       - Not a necessary step, just to help us see what we're doing clearly */
+    height: 50vw; 
+    margin: 0 auto;
+    width: 50vw;
 }
+
+/* Let's create some classes for our alternating colors - Part of Step 2 */
 .lite-orange {
     background-color: lightsalmon;
-    width: 40px;
-    height: 40px;
+
 }
 .orange {
     background-color: orangered;
-    width: 40px;
-    height: 40px;
+
 }
-.container2 { /*I swear, I've plugged everything in this to make that 2nd column*/
-    justify-content: space-evenly;
-    align-items: flex-start;
+/*
+Now, our board is set up to stack things on top of each other with flex-direction: column. This means,
+we can create rows of the chessboard that stack on top of each other.
+Inside the rows though, we need to stack things in a line (hence, a row), so lets use flexbox to set that up*/
+.row {
+    /* Gotta have this! */
+    display: flex;
+    /* This will allow the row to flex to fill the available space (kinda like width 100% but more flexable) */
+    flex: 1;
+    /* This says anything inside a row will stack in a line instead of on top of each other - alternating checkboxes! */
     flex-direction: row;
-    position: relative;
-    
-    
+}
 
-
-    
+.lite-orange, .orange {
+    /* We're just setting our squares up to fill the available space, split evenly across the row. */
+    flex: 1;
 }
