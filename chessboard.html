@@ -9,26 +9,38 @@
 </head>
 <body>
      
-        <div id="container1">
-            <div class="lite-orange"></div>
-            <div class="orange"></div>
-            <div class="lite-orange"></div>
-            <div class="orange"></div>
-            <div class="lite-orange"></div>
-            <div class="orange"></div>  
-            <div class="lite-orange"></div>  
-            <div class="orange"></div>
-        </div>
+        <!-- Here we should have a board with a black border-->
+        <div class="board">
+            <!-- And our rows should stack on top of each other due to flex-direction:column -->
+            <div class="row">
+                <!-- and our boxes should stack in a line (instead of on top fo another
+                due to flex-direction:row -->
+                <div class="lite-orange"></div>
+                <div class="orange"></div>
+                <div class="lite-orange"></div>
+                <div class="orange"></div>
+                <div class="lite-orange"></div>
+                <div class="orange"></div>  
+                <div class="lite-orange"></div>  
+                <div class="orange"></div>
+            </div>
+            <div class="row">
+                <div class="orange"></div>
+                <div class="lite-orange"></div>
+                <div class="orange"></div>
+                <div class="lite-orange"></div>
+                <div class="orange"></div>
+                <div class="lite-orange"></div>
+                <div class="orange"></div>
+                <div class="lite-orange"></div>
+            </div>
+            
+            <!-- the flex: 1 settings should allow the rows to fill up the available space evenly
+            and the squares to fill up each row evenly -->
 
-        <div id="container2">
-            <div class="orange"></div>
-            <div class="lite-orange"></div>
-            <div class="orange"></div>
-            <div class="lite-orange"></div>
-            <div class="orange"></div>
-            <div class="lite-orange"></div>
-            <div class="orange"></div>
-            <div class="lite-orange"></div>
+            <!-- This is onviously an incomplete chessboard, but if you add a row, you should see 
+            how easy it is to go from this bare-minimum solution to a full chessboard pretty quickly!
+            This is why its really important to get good at breaking down problems - helps a ton -->
         </div>  
         
 
